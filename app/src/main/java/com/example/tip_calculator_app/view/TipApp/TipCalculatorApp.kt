@@ -1,5 +1,6 @@
 package com.example.tip_calculator_app.view.TipApp
 
+import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -142,7 +143,8 @@ fun TipCalculatorApp() {
     }
 }
 
-fun CalculateTip(totalAmount: Double, tipPercentage: Double, noOfPeople: Double) : TipResult {
+@VisibleForTesting
+internal fun CalculateTip(totalAmount: Double, tipPercentage: Double, noOfPeople: Double) : TipResult {
 
     val totalTipAmount = totalAmount * tipPercentage / 100
     val totAmount = totalAmount + totalTipAmount
